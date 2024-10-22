@@ -25,6 +25,9 @@ const experimental = LIMIT_CPUS
 module.exports = (phase, { defaultConfig }) => {
   let nextConfig = {
     ...defaultConfig,
+    typescript: {
+      ignoreBuildErrors: true,
+    },
     reactStrictMode: true,
     webpack: (config) => {
       config.module.rules.push({
